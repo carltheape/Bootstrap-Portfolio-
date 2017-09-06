@@ -17,7 +17,7 @@ footer{
 }
 
 .name{
-	font-family: 'Georgia', Times, Times New Roman, serif;
+		font-family: 'Baloo Bhaijaan', cursive;
 	color: white;
 	background-color: teal;
 	width: auto;
@@ -27,12 +27,12 @@ footer{
 }
 
 .about{	
-	font-family: 'Georgia', Times, Times New Roman, serif;
+		font-family: 'Baloo Bhaijaan', cursive;
 	color: teal;
 	width: auto;
 	padding-bottom: 15px;
 	padding-left: 15px;
-	text-align: left;
+	text-align: center;
 	border-bottom: 2px solid grey;
 
 }
@@ -54,6 +54,30 @@ img.portrait{
 		padding-bottom: 10px;
 		float: left;
 	}
+
+img.portrait2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  width: 240px;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.picBox{
+	position: relative;
+}
+
+.picBox:hover img.portrait2 {
+  opacity: 1;
+   position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
 
 p{	padding-left: 25px;
 	padding-right: 25px;
@@ -85,7 +109,7 @@ ul.nav{
 
 	.connect{
 		color: teal;
-		font-family: 'Georgia', Times, Times New Roman, serif;
+			font-family: 'Baloo Bhaijaan', cursive;
 		text-align: center;
 		border-bottom: 0px solid lightgrey;
 		width: 100%;
@@ -98,14 +122,16 @@ ul.nav{
 		width: 100%;
 		align-items: flex-stretch;
   		justify-content: space-around;
+  		background-color: transparent;
 
 }
 
 	h5.links{
-	font-family: 'Georgia', Times, Times New Roman, serif;
+	font-family: 'Baloo Bhaijaan', cursive;
 	color: grey;
 	text-align: center;
 }
+
 	a{
 	text-decoration: none;
 }
@@ -115,6 +141,7 @@ ul.nav{
 		width: 90%;
 		display: flex;
 		flex-direction: column;
+		padding-bottom: 20px;
 	}
 	.folio{
 	margin-right: auto;
@@ -137,6 +164,48 @@ ul.nav{
 	margin-bottom: 10px;
 }
 
-img.network: hover {
-    box-shadow: 10px 10px 20px 10px orange;
+.boxxy{
+border : 5px solid transparent;
+  -webkit-transition : border 500ms ease-out;
+  -moz-transition : border 500ms ease-out;
+  -o-transition : border 500ms ease-out;
+  transition : border 500ms ease-out;
+}
+ .boxxy :hover {
+    border : 5px solid orange; 
  }
+
+.tooltipp {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltipp .tooltiptextt {
+	font-family: 'Baloo Bhaijaan', cursive;
+	text-shadow: 1px 1px 4px black;
+	font-size: 14pt;
+    visibility: hidden;
+    width: 120px;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    z-index: 1;
+/*    bottom: 100%;*/
+      position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltipp:hover .tooltiptextt {
+    visibility: visible;
+    opacity: 1;
+}
+
+
