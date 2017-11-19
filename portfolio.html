@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+        font: 400 15px/1.8 "Lato", sans-serif;
+        color: #777;
+    }
+
+    .bgimg-1,
+    .bgimg-2,
+    .bgimg-3,
+    .bgimg-4 {
+        position: relative;
+        opacity: 1;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .bgimg-1 {
+        background-image: url("assets/pics/img_parallax.jpg");
+        min-height: 100%;
+        position: relative;
+        background-position: right 50% bottom 0px;
+    }
+
+    .bgimg-2 {
+        background-image: url("assets/pics/img_parallax6.jpg");
+        min-height: 100%;
+        position: relative;
+        background-position: right 50% bottom 50%;
+    }
+
+    .bgimg-3 {
+        background-image: url("assets/pics/img_parallax3.jpg");
+        min-height: 100%;
+        position: relative;
+        background-position: right 50% bottom 140%;
+    }
+
+    .bgimg-4 {
+        background-image: url("assets/pics/img_parallax4.jpg");
+        min-height: 100%;
+        position: relative;
+        background-position: right 50% bottom 85%;
+    }
+
+    .bgimg-5 {
+        background-image: url("assets/pics/img_parallax5.jpg");
+        min-height: 100%;
+        position: relative;
+        background-position: right 50% bottom 85%;
+    }
+
+    .bgimg-6 {
+        background-image: url("assets/pics/img_parallax6.jpg");
+        background-size: 100%;
+        min-height: 100%;
+        position: relative;
+        background-position: right 50% bottom 0%;
+    }
+
+    .caption {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: #000;
+    }
+
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: auto;
+        z-index: 10;
+    }
+
+    .caption span.border {
+        background-color: #111111;
+        color: #fff;
+        padding: 18px;
+        font-size: 35px;
+        letter-spacing: 10px;
+        height: 20px;
+        text-shadow: 2px 2px 2px black, 0 0 10px black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        font-family: 'Josefin Sans', sans-serif;
+        border-radius: 20px;
+        opacity: .85;
+    }
+
+    .navibar {
+        background-color: #111111;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .navbutton {
+        text-align: center;
+        background-color: transparent;
+        color: #fff;
+        padding: 28px;
+        letter-spacing: 10px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: border .5s;
+        border-radius: 30px;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    .navbutton:hover {
+        border-color: white;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translate3d(0, 100%, 0);
+        }
+
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    .fadeInUp {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-name: fadeInUp;
+    }
+
+    h2, h3 {
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-family: 'Josefin Sans', sans-serif;
+        color: #111;
+        font-weight: bolder;
+    }
+
+    h4{
+        font-family: 'Josefin Sans', sans-serif;
+        color: #111;
+        font-weight: bolder;
+    }
+    /* Turn off parallax scrolling for tablets and phones */
+
+    @media only screen and (max-device-width: 1024px) {
+        .bgimg-1,
+        .bgimg-2,
+        .bgimg-3 {
+            background-attachment: scroll;
+        }
+    }
+
+    .burger {
+        color: white;
+    }
+
+    #titlepage {
+        position: absolute;
+        float: left;
+    }
+
+    .divider {
+        color: #777;
+        background-color: white;
+        text-align: center;
+        text-align: justify;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .thumbnail {
+        height: 200px;
+        position: relative;
+        display: inline-block;
+        margin: 10px;
+        transition: all .2s ease-in-out;
+    }
+
+    .thumbnail:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+
+    .gallery {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .modalPic {
+        margin-top: 25px;
+        cursor: pointer;
+    }
+
+    .webProject {
+        background-color: white;
+        opacity: 0.8;
+        border-radius: 30px;
+    }
+
+    .webIcon {
+        height: 100px;
+        position: relative;
+        float: left;
+        margin: 10px;
+    }
+
+    .appLogo{
+        height: 40px;
+    }
+    /* Large screens ----------- */
+
+    @media only screen and (max-width: 992px) {
+        /*body {display: none;}*/
+        .navbar-nav>li {
+            float: none;
+        }
+        .navbar-nav {
+            float: none;
+        }
+        .nav.navbar-nav {
+            clear: both;
+            float: left;
+            margin: 0 0 0 -15px;
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div id="top"></div>
+    <nav class="navibar sticky" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#top">
+                    <div id="titlepage"></div>
+                </a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class=" burger fa fa-bars fa-2x" aria-hidden="true"></i>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="nav row">
+                    <div class="col-sm-4  col-xs-12">
+                    </div>
+                    <a href="#photos">
+                        <div class="navbutton col-sm-2  col-xs-12">
+                            <span class="border">photos</span>
+                        </div>
+                    </a>
+                    <a href="#web">
+                        <div class="navbutton col-sm-2 col-xs-12">
+                            <span class="border">web</span>
+                        </div>
+                    </a>
+                    <a href="#misc">
+                        <div class="navbutton col-sm-2 col-xs-12">
+                            <span class="border">misc</span>
+                        </div>
+                    </a>
+                    <a href="#contact">
+                        <div class="navbutton col-sm-2 col-xs-12">
+                            <span class="border">contact</span>
+                        </div>
+                    </a>
+                    </row>
+                </div>
+    </nav>
+    </div>
+    <div id="home" class="bgimg-1">
+        <div id="name" class="caption">
+            <span class="border">TYLER FINKLE</span>
+        </div>
+    </div>
+    <div class="divider" id="photos">
+        <h3 style="text-align:center;">photography</h3>
+    </div>
+    <div class="bgimg-2">
+        <div class="gallery text-center">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img9.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax2.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img10.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax3.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img11.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax4.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img2.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax5.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img8.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax6.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img12.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img1.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img3.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img5.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img4.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img6.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img7.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img13.jpg">
+        </div>
+    </div>
+    <div style="position:relative;">
+        <div class="divider" id="web">
+            <h3 style="text-align:center;">web</h3>
+        </div>
+    </div>
+    <div class="bgimg-3">
+        <div class="container">
+            <br>
+            <div class="row webProject text-center">
+                <a href="https://carltheape.github.io/carlosSanFrancisco/" target="_blank">
+                    <h3>Carlos San-Francisco - <img class="appLogo" src="assets/pics/carlos.png"></h3>
+                    <div class="col-xs-1">
+                        <i class="fa fa-gamepad fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="col-xs-11">
+                        A web game inspired by Carmen Sandiego using JavaScript, MapBox and Firebase. The user must use clues given to them in the form of pictures taken around the world and various facts given to them to try and track down the criminal on the world map before time runs out.
+                    </h4>
+                </a>
+                <br>
+                <a class="col-xs-1" href="https://github.com/carltheape/carlosSanFrancisco" target="_blank"><img src="assets/pics/GitHub-Mark-32px.png"></a>
+                <p>*This was my first project. It is not playable on mobile*</p>
+                <br>
+            </div>
+
+            <br>
+            <div class="row webProject text-center">
+                <a href="https://pill-guru.herokuapp.com/" target="_blank">
+                    <h3>Pill-Guru - <img class="appLogo" src="assets/pics/pillgurulogo.png"></h3>
+                    <div class="col-xs-1">
+                        <i class="fa fa-heartbeat fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="col-xs-11">
+                        A medication organizer and tracker. Using MySQL, Node, API calls, and Express my team built an app that can track medication for a given user, store images of the given medication and alert the user to any possible conflicts among a medication list
+                    </h4>
+                </a>
+                <br>
+                <a class="col-xs-1" href="https://github.com/carltheape/pillbox" target="_blank"><img src="assets/pics/GitHub-Mark-32px.png"></a>
+                <p>* Authentication has not been completed *</p>
+                <br>
+            </div>
+
+            <br>
+            <div class="row webProject text-center">
+                <a href="https://github.com/carltheape/YouBrew" target="_blank">
+                    <h3>You Brew - <img class="appLogo" src="assets/pics/youbrew.png"></h3>
+                    <div class="col-xs-1">
+                        <i class="fa fa-beer fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="col-xs-11">
+                        An internal facing tracking app for Arches Brewing, Atlanta GA. This application was built using React, Node, Axios and MongoDB. This app allows the sales team in the field to have a live feed into the inventory of the brewery and their development cycle. The user can track processes, request new batches, reserve portions of incomplete batches for future sales and communicate with the brewers in real time.
+                    </h4>
+                </a>
+                <br>
+                <a class="col-xs-1" href="https://github.com/carltheape/YouBrew" target="_blank"><img src="assets/pics/GitHub-Mark-32px.png"></a>
+                <p>* This has not been published publicly, but the source code is available *</p>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div style="position:relative;">
+        <div id="misc" class="divider">
+            <h3 style="text-align:center;">misc</h3>
+        </div>
+    </div>
+    <div class="bgimg-4">
+        <div class="caption">
+            <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">MISC PAGE!</span>
+        </div>
+    </div>
+    <div style="position:relative;">
+        <div class="divider" id="contact">
+            <h3 style="text-align:center;">contact</h3>
+        </div>
+    </div>
+    <div class="bgimg-1">
+        <div class="caption">
+            <span class="border">CONTACT PAGE!</span>
+        </div>
+    </div>
+    <div class="modal fade text-center" id="myModal" role="dialog">
+        <!-- Modal content-->
+        <img id="modalPic" class="modalPic" src="" data-dismiss="modal" data-target="#myModal">
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</html>
+<script type="text/javascript">
+// Get the navbar
+var tyler = document.getElementById("name");
+var title = document.getElementById("titlepage");
+
+// Get the offset position of the navbar
+var sticky = tyler.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove the sticky class when you leave the scroll position.
+
+window.onscroll = function() {
+    if (window.pageYOffset >= sticky) {
+        title.innerHTML = "TYLER FINKLE";
+        title.classList.add("navbutton");
+        title.classList.add("fadeInUp");
+        tyler.classList.remove("caption");
+    } else {
+        title.innerHTML = "";
+        title.classList.remove("navbutton");
+        title.classList.remove("fadeInUp");
+        tyler.classList.add("caption");
+    }
+};
+
+$('.thumbnail').click(function() {
+    var thumb = $(this);
+    var newSrc = thumb["0"].src;
+    var height = this.height;
+    var width = this.width;
+    if (height > width) {
+        document.getElementById('modalPic').setAttribute("style", "height:90vh");
+    } else { document.getElementById('modalPic').setAttribute("style", "width:70vw") };
+    $("#modalPic").attr("src", newSrc);
+});
+</script>
