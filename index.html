@@ -182,7 +182,8 @@
     }
 
     .thumbnail {
-        height: 200px;
+        max-height: 200px;
+        max-width: 80vw;
         position: relative;
         display: inline-block;
         margin: 10px;
@@ -219,6 +220,12 @@
 
     .appLogo {
         height: 40px;
+    }
+
+    .skill{
+        max-height: 50px;
+        max-width: 50px;
+        margin: 15px;
     }
     /* Large screens ----------- */
 
@@ -259,14 +266,14 @@
                 <div class="nav row">
                     <div class="col-sm-4  col-xs-12">
                     </div>
+                                        <a href="#web">
+                        <div class="navbutton col-sm-2 col-xs-12">
+                            <span class="border">web</span>
+                        </div>
+                    </a>
                     <a href="#photos">
                         <div class="navbutton col-sm-2  col-xs-12">
                             <span class="border">photos</span>
-                        </div>
-                    </a>
-                    <a href="#web">
-                        <div class="navbutton col-sm-2 col-xs-12">
-                            <span class="border">web</span>
                         </div>
                     </a>
                     <a href="#misc">
@@ -288,33 +295,7 @@
             <span class="border">TYLER FINKLE</span>
         </div>
     </div>
-    <div class="divider" id="photos">
-        <h3 style="text-align:center;">photography</h3>
-    </div>
-    <div class="bgimg-2">
-        <div class="gallery text-center">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img9.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax2.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img10.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax3.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img11.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax4.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img2.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax5.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img8.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax6.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img12.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img1.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img3.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img5.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img4.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img6.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img7.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img13.jpg">
-            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img14.jpg">
-        </div>
-    </div>
+
     <div style="position:relative;">
         <div class="divider" id="web">
             <h3 style="text-align:center;">web</h3>
@@ -336,6 +317,23 @@
                 <br>
                 <a class="col-xs-1" href="https://github.com/carltheape/carlosSanFrancisco" target="_blank"><img src="assets/pics/GitHub-Mark-32px.png"></a>
                 <p>*This was my first project. It is not playable on mobile*</p>
+                <br>
+            </div>
+            <br>
+            <div class="row webProject text-center">
+                <a href="https://carltheape.github.io/hang_man/" target="_blank">
+                    <h3>Classic Rock Hangman - <i class="fa fa-music appLogo" aria-hidden="true"></i></h3>
+                    <div class="col-xs-1">
+                        <i class="fa fa-gamepad fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="col-xs-11">
+                        A web game version of the classic school-age game hangman with the theme of classic rock and roll.                                                                       
+                    </h4>
+                    <br>
+                </a>
+                <br>
+                <a class="col-xs-1" href="https://github.com/carltheape/hang_man" target="_blank"><img src="assets/pics/GitHub-Mark-32px.png"></a>
+                <p>*An early project, not optimized for mobile.*</p>
                 <br>
             </div>
             <br>
@@ -370,17 +368,108 @@
                 <p>* This has not been published publicly, but the source code is available *</p>
                 <br>
             </div>
+
+            <br>
+            <div class="row webProject text-center">
+                <a href="https://github.com/carltheape/lawfirm" target="_blank">
+                    <h3>Sarah Kelsey Law - <img class="appLogo" src="assets/pics/sklogo.jpg"></h3>
+                    <div class="col-xs-1">
+                        <i class="fa fa-balance-scale fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="col-xs-11">
+                        A business website for a local attorney built with Bootstrap, HTML and Javascript.  This was built to be mobile responsive and incorporates the custom logo I designed.
+                    </h4>
+                </a>
+                <br>
+                <a class="col-xs-1" href="https://github.com/carltheape/lawfirm" target="_blank"><img src="assets/pics/GitHub-Mark-32px.png"></a>
+                <p>* This firm is no longer in business *</p>
+                <br>
+            </div>
+            <br>
+        </div>
+    </div>
+    <div class="divider" id="photos">
+        <h3 style="text-align:center;">photography</h3>
+    </div>
+    <div class="bgimg-2">
+        <div class="gallery text-center">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img9.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax2.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img10.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax3.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img11.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax4.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img2.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax5.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img8.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img_parallax6.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img12.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img1.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img3.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img5.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img4.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img6.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img7.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img13.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img15.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img14.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/img16.jpg">
         </div>
     </div>
     <div style="position:relative;">
         <div id="misc" class="divider">
-            <h3 style="text-align:center;">misc</h3>
+            <h2 style="text-align:center;">misc</h2>
         </div>
     </div>
     <div class="bgimg-4">
-        <div class="caption">
-            <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">MISC PAGE!</span>
+        <div class="container">
+        <div class="gallery text-center">
+            <div class="row  text-center">
+                <h3>LOGOS</h3>
+                <hr>
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/sklogo.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc10.png">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc3.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc4.jpg">
         </div>
+        <br>
+        <br>
+        <div class="row  text-center">
+            <h3>MASTHEADS</h3>
+            <hr>
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc2.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc13.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc11.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc15.jpg">
+        </div>
+        <br>
+        <br>
+        <div class="row text-center">
+            <h3>PROMOTION</h3>
+            <hr>
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc12.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc5.jpg">            
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc6.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc7.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc10.jpg">
+        </div>
+        <br>
+        <br>
+        <div class="row text-center">
+            <h3>FOR FRIENDS</h3>
+            <hr>
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc1.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc8.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc9.jpg">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/misc14.png">
+            <a href="https://imgur.com/a/k6Rai" target="_blank">
+            <img data-toggle="modal" data-target="#myModal" class="grow thumbnail" src="assets/pics/cube.jpg">
+            </a>
+
+            </div>
+        </div>
+    </div>
     </div>
     <div style="position:relative;">
         <div class="divider" id="contact">
@@ -388,8 +477,62 @@
         </div>
     </div>
     <div class="bgimg-1">
-        <div class="caption">
-            <span class="border">CONTACT PAGE!</span>
+        <div class="container">
+            <br>
+            <div class="text-center webProject">
+                <br>
+                <br>
+                <div class="row">
+                <div class="col-xs-3">
+                    <a href="https://github.com/carltheape" target="_blank">
+                    <i class="fa fa-github-square fa-3x" aria-hidden="true"></i>
+                    <h4>GITHUB</h4>
+                    </a>
+                </div>
+                <div class="col-xs-3">
+                    <a href="https://www.linkedin.com/in/tyler-finkle-b9221484/" target="_blank">
+                    <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+                    <h4>LINKED-IN</h4>
+                    </a>
+                </div>
+                <div class="col-xs-3">
+                    <a href="https://twitter.com/intent/tweet?screen_name=CarlTheApe&ref_src=twsrc%5Etfw" target="_blank">
+                    <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>                    
+                    <h4>TWITTER</h4>
+                    </a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <div class="col-xs-3">
+                    <a href="mailto:TBFinkle@gmail.com?Subject=RE:%20Your%20Portfolio" target="_blank">
+                    <i class="fa fa-envelope-o fa-3x" aria-hidden="true"></i>
+                    <h4>E-MAIL</h4>
+                    </a>
+                </div>
+            </div>
+            <br>
+                <br>
+                <div id="logos" class="row text-center">
+                    <img class="skill" src="assets/logos/svgporn-html.png">
+                    <img class="skill" src="assets/logos/svgporn-css.png">
+                    <img class="skill" src="assets/logos/svgporn-javascript.png">
+                    <img class="skill" src="assets/logos/svgporn-bootstrap.png">
+                    <img class="skill" src="assets/logos/svgporn-firebase.png">
+                    <img class="skill" src="assets/logos/dnd.png">
+                    <img class="skill" src="assets/logos/svgporn-lua.png">
+                    <img class="skill" src="assets/logos/svgporn-react.png">
+                    <img class="skill" src="assets/logos/svgporn-nodejs-2.png">
+                    <img class="skill" src="assets/logos/svgporn-terminal.png">
+                    <img class="skill" src="assets/logos/mtg.png">
+                    <img class="skill" src="assets/logos/svgporn-github-3.png">
+                    <img class="skill" src="assets/logos/svgporn-mongodb.png">
+                    <img class="skill" src="assets/logos/mysql.png">
+                    <img class="skill" src="assets/logos/svgporn-handlebars.png">
+                    <img class="skill" src="assets/logos/illustrator.png">
+                    <img class="skill" src="assets/logos/photoshop.png">
+                    <img class="skill" src="assets/logos/windowsten.png">
+                    <img class="skill" src="assets/logos/apple.png">
+                    
+                </div>
+            </div>
         </div>
     </div>
     <div class="modal fade text-center" id="myModal" role="dialog">
@@ -406,6 +549,7 @@
 // Get the navbar
 var tyler = document.getElementById("name");
 var title = document.getElementById("titlepage");
+var logos = document.getElementById("logos");
 
 // Get the offset position of the navbar
 var sticky = tyler.offsetTop;
@@ -413,6 +557,12 @@ var sticky = tyler.offsetTop;
 // Add the sticky class to the navbar when you reach its scroll position. Remove the sticky class when you leave the scroll position.
 
 window.onscroll = function() {
+    if(checkVisible(logos)){
+        logos.classList.add("fadeInUp");
+    } else{
+        logos.classList.remove("fadeInUp")
+    };
+
     if (window.pageYOffset >= sticky) {
         title.innerHTML = "TYLER FINKLE";
         title.classList.add("navbutton");
@@ -423,7 +573,8 @@ window.onscroll = function() {
         title.classList.remove("navbutton");
         title.classList.remove("fadeInUp");
         tyler.classList.add("caption");
-    }
+    };
+
 };
 
 $('.thumbnail').click(function() {
@@ -431,9 +582,16 @@ $('.thumbnail').click(function() {
     var newSrc = thumb["0"].src;
     var height = this.height;
     var width = this.width;
-    if (height > width) {
+    if (height >= width) {
         document.getElementById('modalPic').setAttribute("style", "height:90vh");
     } else { document.getElementById('modalPic').setAttribute("style", "width:70vw") };
     $("#modalPic").attr("src", newSrc);
 });
+
+function checkVisible(elm) {
+  var rect = elm.getBoundingClientRect();
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+}
+
 </script>
