@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -203,6 +204,8 @@
     .modalPic {
         margin-top: 25px;
         cursor: pointer;
+        max-height: 70vh;
+        max-width: 90vw;
     }
 
     .webProject {
@@ -221,12 +224,49 @@
     .appLogo {
         height: 40px;
     }
+    
+    .skill:nth-child(even){
+        transform: translateY(-1000px);
+        /*border: solid 2px lime;*/
+    }
+    
+    .skill:nth-child(odd){
+        transform: translateY(1000px);
+        /*border: solid 2px red;*/
+    }
 
     .skill{
         max-height: 50px;
         max-width: 50px;
         margin: 15px;
+        opacity: 0;
+        padding: 0 5px;
     }
+    
+  
+  #list{
+    display: inline;
+  }
+  
+  #today-in{
+    margin: 0;
+    display: inline;
+  }
+  
+  #clock{
+    position: fixed;
+    top: 0;
+    /*z-index: 10;*/
+    left: 20px; 
+  }
+  
+  .wiki{
+    top: 70px;
+    background-color: #111111;
+    width: 90vw;
+    z-index: 12;
+  }
+  
     /* Large screens ----------- */
 
     @media only screen and (max-width: 992px) {
@@ -245,6 +285,7 @@
         }
     }
     </style>
+      <title>Tyler Finkle Portfolio</title>
 </head>
 
 <body>
@@ -261,7 +302,6 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="nav row">
                     <div class="col-sm-4  col-xs-12">
@@ -288,6 +328,15 @@
                     </a>
                     </row>
                 </div>
+                <div id="history">
+          <canvas id="clock"></canvas>
+          <!-- <div id="digital"></div> -->
+            <div class="wiki">
+                <div id="today-in">Today in History:</div>
+                <div id="list"> 
+                </div>
+            </div>
+        </div>
     </nav>
     </div>
     <div id="home" class="bgimg-1">
@@ -511,26 +560,33 @@
             <br>
                 <br>
                 <div id="logos" class="row text-center">
-                    <img class="skill" src="assets/logos/svgporn-html.png">
-                    <img class="skill" src="assets/logos/svgporn-css.png">
-                    <img class="skill" src="assets/logos/svgporn-javascript.png">
-                    <img class="skill" src="assets/logos/svgporn-bootstrap.png">
-                    <img class="skill" src="assets/logos/svgporn-firebase.png">
-                    <img class="skill" src="assets/logos/dnd.png">
-                    <img class="skill" src="assets/logos/svgporn-lua.png">
-                    <img class="skill" src="assets/logos/svgporn-react.png">
-                    <img class="skill" src="assets/logos/svgporn-nodejs-2.png">
-                    <img class="skill" src="assets/logos/svgporn-terminal.png">
-                    <img class="skill" src="assets/logos/mtg.png">
-                    <img class="skill" src="assets/logos/svgporn-github-3.png">
-                    <img class="skill" src="assets/logos/svgporn-mongodb.png">
-                    <img class="skill" src="assets/logos/mysql.png">
-                    <img class="skill" src="assets/logos/svgporn-handlebars.png">
-                    <img class="skill" src="assets/logos/illustrator.png">
-                    <img class="skill" src="assets/logos/photoshop.png">
-                    <img class="skill" src="assets/logos/windowsten.png">
-                    <img class="skill" src="assets/logos/apple.png">
-                    
+                    <img class="skill" src="assets/logos/svgporn-html.png" data-toggle="tooltip" data-placement="top" title="Hyper Text Markup Language">
+                    <img class="skill" src="assets/logos/svgporn-css.png" data-toggle="tooltip" data-placement="top" title="Cascading Style Sheets">
+                    <img class="skill" src="assets/logos/svgporn-javascript.png" data-toggle="tooltip" data-placement="top" title="Javascript">
+                    <img class="skill" src="assets/logos/svgporn-bootstrap.png" data-toggle="tooltip" data-placement="top" title="Bootstrap">
+                    <img class="skill" src="assets/logos/sass.png" data-toggle="tooltip" data-placement="top" title="Sass">
+                    <img class="skill" src="assets/logos/svgporn-firebase.png" data-toggle="tooltip" data-placement="top" title="Firebase">
+                    <img class="skill" src="assets/logos/dnd.png" data-toggle="tooltip" data-placement="top" title="D & D">
+                    <img class="skill" src="assets/logos/svgporn-lua.png" data-toggle="tooltip" data-placement="top" title="LUA">
+                    <img class="skill" src="assets/logos/babel.png" data-toggle="tooltip" data-placement="top" title="Babel">
+                    <img class="skill" src="assets/logos/svgporn-react.png" data-toggle="tooltip" data-placement="top" title="React">
+                    <img class="skill" src="assets/logos/svgporn-nodejs-2.png" data-toggle="tooltip" data-placement="top" title="Node">
+                    <img class="skill" src="assets/logos/browserfy.png" data-toggle="tooltip" data-placement="top" title="Browserfy">
+                    <img class="skill" src="assets/logos/svgporn-terminal.png" data-toggle="tooltip" data-placement="top" title="Command Line">
+                    <img class="skill" src="assets/logos/mtg.png" data-toggle="tooltip" data-placement="top" title="Magic: the Gathering">
+                    <img class="skill" src="assets/logos/dev-tools.png" data-toggle="tooltip" data-placement="top" title="Dev Tools">
+                    <img class="skill" src="assets/logos/svgporn-github-3.png" data-toggle="tooltip" data-placement="top" title="Git">
+                    <img class="skill" src="assets/logos/svgporn-mongodb.png" data-toggle="tooltip" data-placement="top" title="MongoDB">
+                    <img class="skill" src="assets/logos/green-sock.png" data-toggle="tooltip" data-placement="top" title="Green Sock">
+                    <img class="skill" src="assets/logos/mysql.png" data-toggle="tooltip" data-placement="top" title="MySQL">
+                    <img class="skill" src="assets/logos/svgporn-handlebars.png" data-toggle="tooltip" data-placement="top" title="Handlebars">
+                    <img class="skill" src="assets/logos/gulp.png" data-toggle="tooltip" data-placement="top" title="Gulp">
+                    <img class="skill" src="assets/logos/nunjuks.png" data-toggle="tooltip" data-placement="top" title="Nunjuks">
+                    <img class="skill" src="assets/logos/illustrator.png" data-toggle="tooltip" data-placement="top" title="Adobe Illustrator">
+                    <img class="skill" src="assets/logos/photoshop.png" data-toggle="tooltip" data-placement="top" title="Adobe Photoshop">
+                    <img class="skill" src="assets/logos/sitecore.png" data-toggle="tooltip" data-placement="top" title="Sitecore CMS">
+                    <img class="skill" src="assets/logos/windowsten.png" data-toggle="tooltip" data-placement="top" title="Windows OS">
+                    <img class="skill" src="assets/logos/apple.png" data-toggle="tooltip" data-placement="top" title="Mac OS">
                 </div>
             </div>
         </div>
@@ -540,17 +596,27 @@
         <img id="modalPic" class="modalPic" src="" data-dismiss="modal" data-target="#myModal">
     </div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/CSSPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/easing/EasePack.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenLite.min.js"></script>
+
 <script type="text/javascript">
 // Get the navbar
 var tyler = document.getElementById("name");
 var title = document.getElementById("titlepage");
 var logos = document.getElementById("logos");
+var skills = document.getElementsByClassName("skill");
 
+console.log(skills);
+
+$(function () {
+  $(skills).tooltip()
+})
 // Get the offset position of the navbar
 var sticky = tyler.offsetTop;
 
@@ -558,9 +624,13 @@ var sticky = tyler.offsetTop;
 
 window.onscroll = function() {
     if(checkVisible(logos)){
-        logos.classList.add("fadeInUp");
-    } else{
-        logos.classList.remove("fadeInUp")
+        let delay = 0.2
+        for (var i = 0; i < skills.length; i++) {
+            TweenLite.to(skills[i], 0.75, {opacity: 1, y: 0, x: 0, delay: delay, rotation:"1080"});
+            delay += 0.1;
+            // skills[i].classList.add("fadeInUp");
+        }
+
     };
 
     if (window.pageYOffset >= sticky) {
@@ -582,9 +652,9 @@ $('.thumbnail').click(function() {
     var newSrc = thumb["0"].src;
     var height = this.height;
     var width = this.width;
-    if (height >= width) {
-        document.getElementById('modalPic').setAttribute("style", "height:90vh");
-    } else { document.getElementById('modalPic').setAttribute("style", "width:70vw") };
+    // if (height > width) {
+    //     document.getElementById('modalPic').setAttribute("style", "height:70%");
+    // } else { document.getElementById('modalPic').setAttribute("style", "width:90%") };
     $("#modalPic").attr("src", newSrc);
 });
 
@@ -593,5 +663,272 @@ function checkVisible(elm) {
   var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
   return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
 }
+
+
+function Vector (magnitude, angle) {
+    var m, a;
+
+    this.getX = function () {
+        return m * Math.cos(a);
+    };
+
+    this.setX = function (x) {
+        var y = m * Math.sin(a);
+        m = Math.sqrt((x * x) + (y * y));
+        a = Math.atan2(y, x);
+    };
+
+    this.getY = function () {
+        return m * Math.sin(a);
+    };
+
+    this.setY = function (y) {
+        var x = m * Math.cos(a);
+        m = Math.sqrt((x * x) + (y * y));
+        a = Math.atan2(y, x);
+    };
+
+    this.getMag = function () {
+        return m;
+    };
+
+    this.setMag = function (magnitude) {
+        m = magnitude;
+    };
+
+    this.getAngle = function () {
+        return a;
+    };
+
+    this.setAngle = function (angle) {
+        a = angle;
+    };
+
+    this.add = function (v) {
+        return Vector.add(this, v);
+    };
+
+    this.subtract = function (v) {
+        return Vector.subtract(this, v);
+    };
+
+    this.setMag(magnitude);
+    this.setAngle(angle);
+}
+
+Vector.rectangular = function (x, y) {
+    var m = Math.sqrt(x * x + y * y),
+        a = Math.atan2(y, x);
+    return new Vector(m, a);
+};
+
+Vector.polar = function (m, a) {
+    return new Vector(m, a);
+};
+
+Vector.add = function (v1, v2) {
+    return Vector.rectangular(v1.getX() + v2.getX(), v1.getY() + v2.getY());
+};
+
+Vector.subtract = function (v1, v2) {
+    return Vector.rectangular(v1.getX() - v2.getX(), v1.getY() - v2.getY());
+};
+
+let canvas, ctx;
+
+function draw () {
+    let time = (function () {
+            let midnight = new Date();
+            midnight.setHours(0);
+            midnight.setMinutes(0);
+            midnight.setSeconds(0);
+            midnight.setMilliseconds(0);
+            return Date.now() - midnight.getTime();
+        })(),
+        hours = time / (60 * 60 * 1000),
+        minutes = hours * 60 % 60,
+        seconds = minutes * 60 % 60,
+        c = {x: canvas.width / 2, y: canvas.height / 2};
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+
+    ctx.lineCap = 'round';
+
+    face();
+    minuteHand();
+    hourHand();
+    secondHand();
+    digital();
+
+    function face () {
+        // Border
+        ctx.lineWidth = 5;
+        ctx.strokeStyle = 'black';
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, 80, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.fillStyle = 'snow';
+        ctx.fill();
+
+        // Dashes
+        ctx.lineWidth = 3;
+        for (let i = 0; i < 60; i++) {
+            let r = 75,
+                l = 5;
+            ctx.strokeStyle = 'rgba(0, 0, 0, 0.25)';
+            if (i % 5 === 0)
+                r -= l,
+                l *= 2,
+                ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
+            let v = new Vector(r, Math.PI * 2 * (i / 60) - Math.PI / 2);
+            ctx.beginPath();
+            ctx.moveTo(v.getX() + c.x, v.getY() + c.y);
+            v.setMag(r + l);
+            ctx.lineTo(v.getX() + c.x, v.getY() + c.y);
+            ctx.stroke();
+        }
+
+        // Numbers
+        ctx.font = '16px Josefin Sans, sans-serif';
+        ctx.fillStyle = 'black';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        for (let i = 1; i <= 12; i++) {
+            let v = new Vector(60, Math.PI * 2 * (i / 12) - Math.PI / 2);
+            ctx.fillText(i, v.getX() + c.x, v.getY() + c.y);
+        }
+
+        // Center button
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, 3.75, 0, Math.PI * 2);
+        ctx.fillStyle = 'white';
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 2.5;
+        ctx.fill();
+        ctx.stroke();
+    }
+
+    function secondHand () {
+        ctx.lineWidth = 1.5;
+        ctx.strokeStyle = 'red';
+        ctx.beginPath();
+        let a = Math.PI * 2 * (seconds / 60) - Math.PI / 2;
+        let v = new Vector(45, a);
+        let v2 = new Vector(-10, a);
+        ctx.moveTo(v2.getX() + c.x, v2.getY() + c.y);
+        ctx.lineTo(v.getX() + c.x, v.getY() + c.y);
+        ctx.stroke();
+    }
+
+    function minuteHand () {
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = 'black';
+        ctx.beginPath();
+        let a = Math.PI * 2 * (minutes / 60) - Math.PI / 2;
+        let v = new Vector(45, a);
+        ctx.moveTo(c.x, c.y);
+        ctx.lineTo(v.getX() + c.x, v.getY() + c.y);
+        ctx.stroke();
+    }
+
+    function hourHand () {
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = 'black';
+        ctx.beginPath();
+        let a = Math.PI * 2 * (hours / 12) - Math.PI / 2;
+        let v = new Vector(35, a);
+        ctx.moveTo(c.x, c.y);
+        ctx.lineTo(v.getX() + c.x, v.getY() + c.y);
+        ctx.stroke();
+    }
+    
+    function digital () {
+        let now = new Date();
+        $('#digital').html(`${now.getHours()}:${now.getMinutes()}`);
+    }
+}
+
+function init () {
+    canvas = document.getElementById('clock');
+    canvas.width = canvas.height = 200;
+    ctx = canvas.getContext('2d');
+    ctx.scale(0.5,0.5);
+    
+    setInterval(draw, 10);
+}
+
+init();
+
+var today = new Date();
+//Get today's date
+console.log(today);
+
+var month = new Array();
+month[0] = "January";
+month[1] = "February";
+month[2] = "March";
+month[3] = "April";
+month[4] = "May";
+month[5] = "June";
+month[6] = "July";
+month[7] = "August";
+month[8] = "September";
+month[9] = "October";
+month[10] = "November";
+month[11] = "December";
+//define the months of the year
+
+var n = month[today.getMonth()];
+//grab the month for today
+
+let ev = [];
+// console.log(n+"_"+today.getDate());
+
+$('#date').html(n+" "+today.getDate());
+//put today's month and day on the page
+
+function item() { return ev[Math.floor(Math.random()*ev.length)]};
+//this will grab one random event for today's date
+
+$.getJSON('http://allorigins.me/get?url=' + encodeURIComponent("https://en.wikipedia.org/wiki/" + n + "_" + today.getDate() + "") + '&callback=?', function(data){
+// console.log(data.contents);
+//go get the events for today's date using a GET request
+
+    var el = $( '<div></div>' );
+    el.html(data.contents);
+    //stick the response in an div to be able to access and read it easier
+
+    let events = $('#Events', el).parent().next()[0];
+    //find the Events portion of the response and grab the correct parent that holds all the data
+
+    // console.log(events.children);
+    // console.log(events.children.length);
+    //these are the individual events
+
+    for (var i = 0; i < events.children.length; i++) {
+        ev.push(events.children[i].innerText);
+    }
+    //convert them all into an array to use easier
+
+
+    $('#list').html(item());
+    //stick in an item for the first time
+
+    // console.log(item);
+    
+    $(function() {
+    history();
+
+    function history() {
+       setTimeout(history,12000);
+       $('#list').html(item());
+       //a recursive callback loop that will display a different event every 10 seconds
+    }
+});
+    
+});
+
+
 
 </script>
