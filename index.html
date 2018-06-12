@@ -862,7 +862,6 @@ init();
 
 var today = new Date();
 //Get today's date
-console.log(today);
 
 var month = new Array();
 month[0] = "January";
@@ -885,48 +884,59 @@ var n = month[today.getMonth()];
 let ev = [];
 // console.log(n+"_"+today.getDate());
 
-$('#date').html(n+" "+today.getDate());
+$('#date').html(n + " " + today.getDate());
 //put today's month and day on the page
 
-function item() { return ev[Math.floor(Math.random()*ev.length)]};
+function item() { return ev[Math.floor(Math.random() * ev.length)] };
 //this will grab one random event for today's date
 
-$.getJSON('http://allorigins.me/get?url=' + encodeURIComponent("https://en.wikipedia.org/wiki/" + n + "_" + today.getDate() + "") + '&callback=?', function(data){
-// console.log(data.contents);
-//go get the events for today's date using a GET request
 
-    var el = $( '<div></div>' );
-    el.html(data.contents);
-    //stick the response in an div to be able to access and read it easier
+$.ajax({
+    url: "https://en.wikipedia.org/w/api.php",
+    data: {
+        format: "json",
+        action: "parse",
+        page: n + "_" + today.getDate(),
+        prop: "text",
+        section: 1,
+    },
+    dataType: 'jsonp',
+    headers: {
+        'Api-User-Agent': 'MyCoolTool/1.1 (http://example.com/MyCoolTool/; MyCoolTool@example.com) BasedOnSuperLib/1.4'
+    },
+    success: function(data) {
+        // console.log(data)
+        //      $("#article").html(data.parse.text["*"])
 
-    let events = $('#Events', el).parent().next()[0];
-    //find the Events portion of the response and grab the correct parent that holds all the data
+        var markup = data.parse.text["*"];
+        var i = $('<div></div>').html(markup);
 
-    // console.log(events.children);
-    // console.log(events.children.length);
-    //these are the individual events
+        // remove links as they will not work
+        i.find('a').each(function() { $(this).replaceWith($(this).html()); });
+        var e = $(i).find('p').prevObject["0"].childNodes["0"].childNodes[2].childNodes;
+        // console.log(e);
 
-    for (var i = 0; i < events.children.length; i++) {
-        ev.push(events.children[i].innerText);
+        for (var i = 1; i < e.length; i+=2) {
+            ev.push(e[i].innerText);
+        }
+        //convert them all into an array to use easier
+
+
+        $('#list').html(item());
+        //stick in an item for the first time
+
+        // console.log(item);
+
+        $(function() {
+            history();
+
+            function history() {
+                setTimeout(history, 12000);
+                $('#list').html(item());
+                //a recursive callback loop that will display a different event every 10 seconds
+            }
+        });
     }
-    //convert them all into an array to use easier
-
-
-    $('#list').html(item());
-    //stick in an item for the first time
-
-    // console.log(item);
-    
-    $(function() {
-    history();
-
-    function history() {
-       setTimeout(history,12000);
-       $('#list').html(item());
-       //a recursive callback loop that will display a different event every 10 seconds
-    }
-});
-    
 });
 
 
