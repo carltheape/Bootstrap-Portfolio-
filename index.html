@@ -9,7 +9,9 @@
     body,
     html {
         height: 100%;
+        width: 100%;
         margin: 0;
+        padding: 0;
         font: 400 15px/1.8 "Lato", sans-serif;
         color: #777;
     }
@@ -24,6 +26,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        overflow: hidden;
     }
 
     .bgimg-1 {
@@ -243,6 +246,9 @@
         padding: 0 5px;
     }
     
+    #myModal{
+        display: none;
+    }
   
   #list{
     display: inline;
@@ -265,6 +271,17 @@
     background-color: #111111;
     max-width: 87vw;
     z-index: 12;
+  }
+  
+  #footer{
+    min-height: 50%;
+  }
+  
+  #secret{
+    height: 70px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
   
     /* Large screens ----------- */
@@ -523,7 +540,7 @@
             <h3 style="text-align:center;">contact</h3>
         </div>
     </div>
-    <div class="bgimg-1">
+    <div id="footer" class="bgimg-1">
         <div class="container">
             <br>
             <div class="text-center webProject">
@@ -588,6 +605,7 @@
                 </div>
             </div>
         </div>
+        <img id="secret" src="https://media.giphy.com/media/48Lmv76QTOSIw/source.gif" alt="">
     </div>
     <div class="modal fade text-center" id="myModal" role="dialog">
         <!-- Modal content-->
