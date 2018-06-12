@@ -27,6 +27,8 @@
         background-repeat: no-repeat;
         background-size: cover;
         overflow: hidden;
+        /*-webkit-backface-visibility: hidden;*/
+        -webkit-transform-style: preserve-3d;
     }
 
     .bgimg-1 {
@@ -55,21 +57,6 @@
         min-height: 100%;
         position: relative;
         background-position: right 50% bottom 85%;
-    }
-
-    .bgimg-5 {
-        background-image: url("assets/pics/img_parallax5.jpg");
-        min-height: 100%;
-        position: relative;
-        background-position: right 50% bottom 85%;
-    }
-
-    .bgimg-6 {
-        background-image: url("assets/pics/img_parallax6.jpg");
-        background-size: 100%;
-        min-height: 100%;
-        position: relative;
-        background-position: right 50% bottom 0%;
     }
 
     .caption {
@@ -162,7 +149,8 @@
     @media only screen and (max-device-width: 1024px) {
         .bgimg-1,
         .bgimg-2,
-        .bgimg-3 {
+        .bgimg-3,
+        .bgimg-4 {
             background-attachment: scroll;
         }
     }
@@ -606,7 +594,7 @@
                 </div>
             </div>
         </div>
-        <img id="secret" class="skill" src="https://media.giphy.com/media/35ynZNoGyXQaY/giphy.gif" alt="" data-toggle="tooltip" data-placement="top" title="Rebel Scum!">
+        <img id="secret" class="skill" src="assets/pics/secret.gif" alt="" data-toggle="tooltip" data-placement="top" title="Rebel Scum!">
     </div>
     <div class="modal fade text-center" id="myModal" role="dialog">
         <!-- Modal content-->
